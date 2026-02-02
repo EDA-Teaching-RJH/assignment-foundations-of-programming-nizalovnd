@@ -13,6 +13,8 @@ def run_system_monolith():
     loading = 0
     while loading < 5:
         print("Loading module " + str(loading))
+        #infinite loop, adding line to add 1 to loading every cycle loading+=1
+        loading += 1
         
     
     while True:
