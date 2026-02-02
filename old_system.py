@@ -16,7 +16,8 @@ def run_system_monolith():
         #infinite loop, adding line to add 1 to loading every cycle loading+=1
         loading += 1
         
-    
+    fuel = 100
+
     while True:
         print("\n--- MENU ---")
         print("1. View Crew")
@@ -89,12 +90,14 @@ def run_system_monolith():
         elif len(n) == 0:
             print("Database empty.")
 
-        
-        fuel = 100
-        consumption = 0
+        #the fuel block is completely useless as it just breaks on the first iteration. I am slightly confused as to the intended logic of this block.
+        #placed initial fuel=100 outside of the loop and implemented logic which removed 1 unit of fuel every iteration of the main while loop, whilst maintaining as much of the original code as possible
+        consumption = 1
         while fuel > 0:
             
             print("Idling...")
+            fuel -= consumption
+            print(f"Fuel left {fuel}")
             break 
             
         print("End of cycle.")
