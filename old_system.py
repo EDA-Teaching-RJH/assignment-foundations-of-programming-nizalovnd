@@ -37,8 +37,9 @@ def run_system_monolith():
             new_rank = input("Rank: ")
             new_div = input("Division: ")
             
-           
+            #new_rank was not appended to the rank list
             n.append(new_name)
+            r.append(new_rank)
             print("Crew member added.")
             
         elif opt == "3":
