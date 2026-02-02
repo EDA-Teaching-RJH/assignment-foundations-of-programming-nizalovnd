@@ -31,7 +31,8 @@ def run_system_monolith():
         if opt == "1":  
             print("Current Crew List:")
             
-            for i in range(10):
+            #the iteration iterates over too many indeces, change range(10) to range(len(n))
+            for i in range(len(n)):
                 print(n[i] + " - " + r[i]) 
                 
         elif opt == "2":
@@ -74,6 +75,7 @@ def run_system_monolith():
             
         
         x = 10
+
         if x > 5:
             print("System Check OK")
         else:
