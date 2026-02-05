@@ -105,7 +105,14 @@ def search_crew(names, ranks, divs, ids):
 
 
 def filter_by_division(names, divs):
-    pass
+    division = input("Please select the division from Command , Operations or Sciences")
+    counter = 0
+    for el in divs:
+        if el == division:
+            index = divs.index(el)
+            print(names[index], el)
+            counter += 1
+    print(f"Search completed.Total members found:{counter}")
 
 def calculate_payroll(ranks):
     pass
