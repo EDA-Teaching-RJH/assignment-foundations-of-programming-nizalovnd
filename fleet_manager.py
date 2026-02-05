@@ -1,6 +1,7 @@
 
 
 valid_ranks = ["Ensign", "Lieutenant Junior", "Lieutenant", "Lt. Commander", "Commander", "Captain"]
+salary_list = [200, 300, 400, 500, 600, 700]
 
 def init_database():
     names = ["Picard", "Riker", "Data", "Worf", "Kirk"]
@@ -114,8 +115,17 @@ def filter_by_division(names, divs):
             counter += 1
     print(f"Search completed.Total members found:{counter}")
 
+
+#The salary_list corresponds to the valid_ranks list defined at the top.
 def calculate_payroll(ranks):
-    pass
+    salary_list = [200, 300, 400, 500, 600, 700]
+    total_cost = 0
+    for rank in ranks:
+        index = valid_ranks[rank]
+        credit_val = salary_list[index]
+        total_cost += credit_val
+    return total_cost
+
 
 def count_officers(ranks):
     pass
