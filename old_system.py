@@ -89,8 +89,8 @@ def run_system_monolith():
        
         if len(n) > 0:
             print("Database has entries.")
-            #second condition in if/elif/else statements should be written as elif not a second if
-        elif len(n) == 0:
+            #second condition in if/elif/else statements should be written as elif not a second if, in this case an else statement is appropriate as the length of the list cannot be negative.
+        else:
             print("Database empty.")
 
         #the fuel block is completely useless as it just breaks on the first iteration. I am slightly confused as to the intended logic of this block.
