@@ -1,7 +1,7 @@
 
 
 valid_ranks = ["Ensign", "Lieutenant Junior", "Lieutenant", "Lt. Commander", "Commander", "Captain"]
-salary_list = [200, 300, 400, 500, 600, 700]
+
 
 def init_database():
     names = ["Picard", "Riker", "Data", "Worf", "Kirk"]
@@ -24,14 +24,14 @@ def display_menu():
     print("7. Calculate Payroll")
     print("8. Count Officers")        
     print("9. Exit")
-    choice = input("Please select menu option")
+    choice = input("Please select menu option and enter choice as an integer:")
     return choice
 
 def add_member(names, ranks, divs, ids):
     while True:
-        new_id = int(input("Please enter the id of the new crew memeber:"))
+        new_id = int(input("Please enter the ID of the new crew member:"))
         if new_id in ids:
-            print("Id is already used, please enter a valid id!")
+            print("ID is already used, please enter a valid id!")
             continue
         else:
             break
@@ -43,11 +43,12 @@ def add_member(names, ranks, divs, ids):
         else:
             break
     new_name = input("Please enter the name of the new crew member:")
-    new_div = input("Please enter the division of the new crew member")
+    new_div = input("Please enter the division of the new crew member:")
     names.append(new_name)
     ranks.append(new_rank)
     divs.append(new_div)
     ids.append(new_id)
+    print(f"Member{new_name}, successfully added!")
     return names, ranks, divs, ids
 
         
@@ -66,6 +67,7 @@ def remove_member(names, ranks, divs, ids):
     divs.pop(rem_index)
     ids.pop(rem_index)
 
+    print(f"Member with id={rem_id} has been successfully removed!")
     return names, ranks, divs, ids
 
 
@@ -86,6 +88,7 @@ def update_rank(names, ranks, ids):
             break
     ranks[update_index] = new_rank
 
+    print(f"The rank of crew member id={update_id} has been successfully updated to {new_rank}!")
     return names, ranks, ids 
 
 def display_roster(names, ranks, divs, ids):
@@ -112,7 +115,7 @@ def filter_by_division(names, divs):
         if div == division:
             print(names[el], div)
             counter += 1
-    print(f"Search completed.Total members found:{counter}")
+    print(f"Search completed.Total members found:{counter}!")
 
 
 #The salary_list corresponds to the valid_ranks list defined at the top.
@@ -164,12 +167,12 @@ def main():
 
             case "7":
                 payroll = calculate_payroll(ranks)
-                print(f"The total payroll is {payroll}")
+                print(f"The total payroll is {payroll}!")
                 continue
 
             case "8":
                 officers = count_officers(ranks)
-                print(f"The total number of officers is:{officers}")
+                print(f"The total number of officers is:{officers}!")
                 continue
 
             case "9":
