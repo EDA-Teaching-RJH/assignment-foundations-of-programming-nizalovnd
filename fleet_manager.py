@@ -27,7 +27,7 @@ def display_menu():
     choice = input("Please select menu option")
     return choice
 
-def add_memeber(names, ranks, divs, ids):
+def add_member(names, ranks, divs, ids):
     while True:
         new_id = int(input("Please enter the id of the new crew memeber:"))
         if new_id in ids:
@@ -135,7 +135,44 @@ def count_officers(ranks):
     return counter
 
 def main():
-    pass
+    names, ranks, divs, ids = init_database()
+    while True:
+        choice = display_menu()
+        match choice:
+            case "1":
+                names, ranks, divs, ids = add_member(names, ranks, divs, ids)
+
+            case "2":
+                names, ranks, divs, ids = remove_member(names, ranks, divs, ids)
+                
+            case "3":
+                names, ranks, ids = update_rank(names, ranks, ids)
+
+            case "4":
+                display_roster(names, ranks, divs, ids)
+
+            case "5":
+                search_crew(names, ranks, divs, ids)
+
+            case "6":
+                filter_by_division(names, divs)
+
+            case "7":
+                payroll = calculate_payroll(ranks)
+                print(f"The total payroll is {payroll}")
+
+            case "8":
+                officers = count_officers(ranks)
+                print(f"The total number of officers is:{officers}")
+
+            case "9":
+                break
+
+            case _:
+                print("Invalid choice entered. Please enter a valid choice from the menu!")
+                continue
+
+
 
 
 if __name__ == "__main__":
