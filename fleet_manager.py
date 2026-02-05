@@ -15,7 +15,7 @@ def display_menu():
     student_name = input("Please enter your full name:")
     print("\n--- MENU ---")
     print(f"The current student logged in is:{student_name}")
-    print("1. Add Mmber")
+    print("1. Add Member")
     print("2. Remove Member")
     print("3. Update Rank")
     print("4. Display Roster")
@@ -45,7 +45,7 @@ def add_member(names, ranks, divs, ids):
     new_name = input("Please enter the name of the new crew member:")
     new_div = input("Please enter the division of the new crew member")
     names.append(new_name)
-    ranks.appned(new_rank)
+    ranks.append(new_rank)
     divs.append(new_div)
     ids.append(new_id)
     return names, ranks, divs, ids
@@ -106,7 +106,7 @@ def search_crew(names, ranks, divs, ids):
 
 
 def filter_by_division(names, divs):
-    division = input("Please select the division from Command , Operations or Sciences")
+    division = input("Please select the division from Command , Operations or Sciences:")
     counter = 0
     for el in divs:
         if el == division:
@@ -141,31 +141,40 @@ def main():
         match choice:
             case "1":
                 names, ranks, divs, ids = add_member(names, ranks, divs, ids)
+                continue
 
             case "2":
                 names, ranks, divs, ids = remove_member(names, ranks, divs, ids)
+                continue
                 
             case "3":
                 names, ranks, ids = update_rank(names, ranks, ids)
+                continue
 
             case "4":
                 display_roster(names, ranks, divs, ids)
+                continue
 
             case "5":
                 search_crew(names, ranks, divs, ids)
+                continue
 
             case "6":
                 filter_by_division(names, divs)
+                continue
 
             case "7":
                 payroll = calculate_payroll(ranks)
                 print(f"The total payroll is {payroll}")
+                continue
 
             case "8":
                 officers = count_officers(ranks)
                 print(f"The total number of officers is:{officers}")
+                continue
 
             case "9":
+                print("Goodbye")
                 break
 
             case _:
