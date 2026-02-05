@@ -35,7 +35,7 @@ def add_memeber(names, ranks, divs, ids):
         else:
             break
     while True:
-        new_rank = int(input("Please enter the rank of the new member:"))
+        new_rank = input("Please enter the rank of the new member:")
         if new_rank not in valid_ranks:
             print("Please enter a valid TNG rank!")
             continue
@@ -52,7 +52,21 @@ def add_memeber(names, ranks, divs, ids):
         
 
 def remove_member(names, ranks, divs, ids):
-    pass
+    while True:
+        rem_id = int(input("Please enter the id of the crew member you want to remove:"))
+        if rem_id not in ids:
+            print("The ID enter is not valid. Please enter a valid ID!")
+            continue
+        else:
+            break
+    rem_index = ids.index(rem_id)
+    names.pop(rem_index)
+    ranks.pop(rem_index)
+    divs.pop(rem_index)
+    ids.pop(rem_index)
+
+    return names, ranks, divs, ids
+
 
 def update_rank(names, ranks, ids):
     pass
