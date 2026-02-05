@@ -69,7 +69,23 @@ def remove_member(names, ranks, divs, ids):
 
 
 def update_rank(names, ranks, ids):
-    pass
+    while True:
+        update_id = int(input("Please enter the id of the crew member that you want to update the rank for:"))
+        if update_id not in ids:
+            print("Invalid id entered. Please enterr a valid id!")
+        else:
+            break
+    update_index = ids.index(update_id)
+    while True:
+        new_rank = input("Please enter the new rank:")
+        if new_rank not in valid_ranks:
+            print("Invalid rank entered. Please enter a valid rank!")
+            continue
+        else:
+            break
+    ranks[update_index] = new_rank
+
+    return names, ranks, ids 
 
 def display_roster(names, ranks, divs, ids):
     pass
