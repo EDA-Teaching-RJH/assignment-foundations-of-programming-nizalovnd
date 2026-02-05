@@ -27,7 +27,29 @@ def display_menu():
     return choice
 
 def add_memeber(names, ranks, divs, ids):
-    pass
+    while True:
+        new_id = int(input("Please enter the id of the new crew memeber:"))
+        if new_id in ids:
+            print("Id is already used, please enter a valid id!")
+            continue
+        else:
+            break
+    while True:
+        new_rank = int(input("Please enter the rank of the new member:"))
+        if new_rank not in valid_ranks:
+            print("Please enter a valid TNG rank!")
+            continue
+        else:
+            break
+    new_name = input("Please enter the name of the new crew member:")
+    new_div = input("Please enter the division of the new crew member")
+    names.append(new_name)
+    ranks.appned(new_rank)
+    divs.append(new_div)
+    ids.append(new_id)
+    return names, ranks, divs, ids
+
+        
 
 def remove_member(names, ranks, divs, ids):
     pass
