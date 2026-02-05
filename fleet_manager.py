@@ -108,10 +108,9 @@ def search_crew(names, ranks, divs, ids):
 def filter_by_division(names, divs):
     division = input("Please select the division from Command , Operations or Sciences:")
     counter = 0
-    for el in divs:
-        if el == division:
-            index = divs.index(el)
-            print(names[index], el)
+    for el, div in enumerate(divs):
+        if div == division:
+            print(names[el], div)
             counter += 1
     print(f"Search completed.Total members found:{counter}")
 
