@@ -11,7 +11,7 @@ def init_database():
     return names, ranks, divs, ids
 
 def display_menu():
-    pass
+    student_name = input("Please enter your full name:")
 
 def add_memeber(names, ranks, divs, ids):
     pass
