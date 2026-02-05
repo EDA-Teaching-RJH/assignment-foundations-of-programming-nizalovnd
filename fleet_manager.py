@@ -88,7 +88,10 @@ def update_rank(names, ranks, ids):
     return names, ranks, ids 
 
 def display_roster(names, ranks, divs, ids):
-    pass
+    w = 20
+    print(f"{"Name":^{w}} | {"Rank":^{w}} | {"Division":^{w}} | {"ID":^{w}}")
+    for i in range(len(names)):
+        print(f"{names[i] :^{w}} | {ranks[i] :^{w}} | {divs[i] :^{w}} | {ids[i] :^{w}}")
 
 def search_crew(names, ranks, divs, ids):
     pass
