@@ -120,7 +120,7 @@ def calculate_payroll(ranks):
     salary_list = [200, 300, 400, 500, 600, 700]
     total_cost = 0
     for rank in ranks:
-        index = valid_ranks[rank]
+        index = valid_ranks.index(rank)
         credit_val = salary_list[index]
         total_cost += credit_val
     return total_cost
