@@ -1,7 +1,14 @@
 
 
+valid_ranks = ["Ensign", "Lieutenant Junior", "Lieutenant", "Lt. Commander", "Commander", "Captain"]
+
 def init_database():
-    pass
+    names = ["Picard", "Riker", "Data", "Worf", "Kirk"]
+    ranks = ["Captain", "Commander", "Lt. Commander", "Lieutenant", "Captain"]
+    divs = ["Command", "Command", "Operations", "Security", "Command"]
+    ids = [0,1,2,3,4]
+
+    return names, ranks, divs, ids
 
 def display_menu():
     pass
