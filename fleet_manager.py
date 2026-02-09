@@ -97,9 +97,13 @@ def display_roster(names, ranks, divs, ids):
     for i in range(len(names)):
         print(f"{names[i] :^{w}} | {ranks[i] :^{w}} | {divs[i] :^{w}} | {ids[i] :^{w}}")
 
+"""
+List comprehension used to shorten code to one line.
+Enumerate was used to simplify access to the required indices.
+"""
 def search_crew(names, ranks, divs, ids):
     search_string = input("Please enter the search term:")
-    found_indeces = [i for i, name in enumerate(names) if search_string in name.caasefold()]
+    found_indeces = [i for i, name in enumerate(names) if search_string in name.casefold()]
     if found_indeces:
         for index in found_indeces:
             print(names[index], ranks[index], divs[index], ids[index])
